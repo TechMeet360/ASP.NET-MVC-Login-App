@@ -1,0 +1,39 @@
+﻿
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <title>Login</title>
+    </head>
+    <body bgcolor="#ff80c0">
+        <div>
+            <h2>Login</h2>
+            @Html.ValidationSummary("Create was unsuccessful. Please correct the errors and try again.")
+            @using (Html.BeginForm()) {
+            <fieldset>
+                <legend>Fields</legend>
+                <p>
+                    <label for="Name">Name:</label>
+                    @Html.TextBox("Name")
+                    @Html.ValidationMessage("Id", "*")
+                </p>
+                <p>
+                    <label for="Passward">Passward:</label>
+                    @Html.Password("*") 
+                    @Html.ValidationMessage("Passward", "*")
+                </p>
+                <p>
+                    <label for="Email">Email:</label>
+                    @Html.TextBox("Email")
+                    @Html.ValidationMessage("Email", "*")
+                </p>
+                <p>
+                    <input type="submit" value="Login" />
+                </p>
+            </fieldset>
+            }
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
+    </body>
+</html>

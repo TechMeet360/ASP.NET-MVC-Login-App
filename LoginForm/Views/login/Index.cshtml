@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Index</title>
+</head>
+<body bgcolor="#66ffcc">
+    <div>
+   <table>
+    <tr>
+        <th></th>
+        <th>
+           Name
+        </th>
+        <th>
+            Email
+        </th>
+    </tr>
+@foreach (var user in Model) {
+    <tr>
+        <td>
+            @Html.Encode(user.Name)
+        </td>
+        <td>
+            @Html.Encode(user.Email)
+        </td>
+    </tr>
+ }
+</table>
+<p>
+    @Html.ActionLink("Login Now", "Login")
+</p>
+    </div>
+</body>
+</html>
